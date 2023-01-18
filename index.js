@@ -93,9 +93,9 @@ io.on("connection", async (socket) => {
 
 
 //Conexión del Servidor
-const connectedServer = httpServer.listen(8080, () => {
+const connectedServer = httpServer.listen(process.env.PORT || 8080, () => {
     MongoContainer.connect()
-    console.log(`🚀Server active and runing on port: 8080`);
+    console.log(`🚀Server active and runing on port: ${PORT}`);
   });
   
   connectedServer.on("error", (error) => {
